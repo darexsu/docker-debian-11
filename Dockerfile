@@ -2,7 +2,7 @@ FROM debian:bullseye
 LABEL maintainer="darexsu"
 ARG DEBIAN_FRONTEND=noninteractive
 ENV pip_packages "ansible cryptography"
-ENV ANSIBLE_USER=ansible SUDO_GROUP=wheel DEPLOY_GROUP=deployer
+ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo DEPLOY_GROUP=deployer
 
 # Install dependencies.
 RUN apt-get update \
