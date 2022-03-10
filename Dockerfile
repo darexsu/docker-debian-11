@@ -5,10 +5,11 @@ ENV pip_packages "ansible cryptography"
 ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo DEPLOY_GROUP=deployer
 
 RUN apt-get update ; \
-    apt-get install -y systemd systemd-sysv; \    
+    apt-get install -y systemd systemd-sysv \ 
+    build-essential wget libffi-dev libssl-dev \
     python3-pip python3-dev python3-setuptools python3-wheel python3-apt \
     iproute2 \
-    wget \
+    wget; \
     apt-get clean ; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ; \
     rm -rf /lib/systemd/system/multi-user.target.wants/* ; \
