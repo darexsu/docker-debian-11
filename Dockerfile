@@ -5,8 +5,7 @@ ENV pip_packages "ansible cryptography"
 ENV ANSIBLE_USER=ansible SUDO_GROUP=sudo DEPLOY_GROUP=deployer
 
 RUN apt-get update ; \
-    apt-get install -y systemd systemd-sysv; \
-    build-essential wget libffi-dev libssl-dev \
+    apt-get install -y systemd systemd-sysv; \    
     python3-pip python3-dev python3-setuptools python3-wheel python3-apt \
     iproute2 \
     wget \
